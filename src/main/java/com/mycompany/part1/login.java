@@ -16,20 +16,32 @@ public class login {
     //declarations
     String username;
     String password;
+    String Name;
+    String lastname;
+    
+    public void prompts(){
+        System.out.println("Enter your Name:");
+        Name = poe.next();
+        
+        System.out.println("Enter your lastname:");
+        lastname = poe.next();
+        
+        System.out.println("Enter your username:");
+        username = poe.next();
+        
+        System.out.println("Enter your password:");
+        password = poe.next();
+    }
+    
     
     public boolean checkUserName(){
-        System.out.println("ENTER USERNAME:");
-        username = poe.next();
+       
         System.out.println(username.contains("_"));
         System.out.println(username.length() <= 5);
-        
-        
+    
         return true;
     }
      public boolean checkPasswordComplexity(){
-        //password
-        System.out.println("enter password:");
-        password = poe.next();
         
         String regex =  "^(?=.*[0-9])"
                        + "(?=.*[a-z])(?=.*[A-Z])"
@@ -43,18 +55,12 @@ public class login {
 }
       public void registerUser(){
         
-        if(checkUserName()){
-            System.out.println("The username is correctly formatted");
+        if(checkUserName()== true && checkPasswordComplexity() == true ){
+            System.out.println("The username is correctly formatted and password meets complexity requirements");
         }
         else{
-            System.out.println("The username is incorrectly formatted");
+            System.out.println("The username is incorrectly formatted and password does not meet complexity requirements");
         }
         
-        if(checkPasswordComplexity()){
-            System.out.println("password meets complexity requirements");
-        }
-        else{
-            System.out.println("password does not meet complexity requirements");
-        }
 }
 }
