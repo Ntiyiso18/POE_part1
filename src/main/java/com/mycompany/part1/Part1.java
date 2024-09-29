@@ -11,6 +11,13 @@ package com.mycompany.part1;
 public class Part1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        login ll = new login();
+        
+        ll.prompts();
+          ll.checkUserName();
+         ll.checkPasswordComplexity();
+         ll.registerUser();
+        // ll.returnLoginStatus();
+         ll.display();
     }
 }
