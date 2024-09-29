@@ -26,5 +26,35 @@ public class login {
         
         return true;
     }
+     public boolean checkPasswordComplexity(){
+        //password
+        System.out.println("enter password:");
+        password = poe.next();
+        
+        String regex =  "^(?=.*[0-9])"
+                       + "(?=.*[a-z])(?=.*[A-Z])"
+                       + "(?=.*[@#$%^&+=])$";
+        System.out.println(password.length()>= 8);
+                       
+                       
+                       
+        return true;
     
+}
+      public void registerUser(){
+        
+        if(checkUserName()){
+            System.out.println("The username is correctly formatted");
+        }
+        else{
+            System.out.println("The username is incorrectly formatted");
+        }
+        
+        if(checkPasswordComplexity()){
+            System.out.println("password meets complexity requirements");
+        }
+        else{
+            System.out.println("password does not meet complexity requirements");
+        }
+}
 }
