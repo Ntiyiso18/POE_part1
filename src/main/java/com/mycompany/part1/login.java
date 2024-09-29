@@ -5,7 +5,7 @@
 package com.mycompany.part1;
 
 import java.util.Scanner;
-//import java.util.regex.Matcher;
+import java.util.regex.*;
 
 /**
  *
@@ -48,43 +48,32 @@ public class login {
     
        
     }
-     public boolean checkPasswordComplexity(){
+     public  boolean checkPasswordComplexity(){
          System.out.println("Enter your password:");
         password = poe.next();
         
-        
+        //Regex to validate password
         String regex =  "^(?=.*[0-9])"
                        + "(?=.*[a-z])(?=.*[A-Z])"
-                       + "(?=.*[@#$%^&+=])$";
-        System.out.println(password.length()>= 8);
-        System.out.println(password.matches(regex));
-        
-       // return password.length()> 8 && password.matches(regex);
-        return false;
-                       
-     }   
-     public String registerUser(){
-        
-        if(checkUserName()){
-            System.out.println("The username is correctly formatted");
+                       + "(?=.*[@#$%^&+=]).{8,}$";
+        //Compiling regex
+        Pattern p = Pattern.compile(regex);
+        //if password is empty return false
+        if( password == null){
+            return false;
         }
-        else{
-            System.out.println("The username is incorrectly formatted");
-        }
-        
-        if(checkPasswordComplexity()){
-            System.out.println("password meets complexity requirements");
-        }
-        else{
-            System.out.println("password does not meet complexity requirements");
-        }
-        return null;
-     }
-                       
+        //outputs for password and length
+      System.out.println(password.length()>= 8);
+      System.out.println(password.matches(regex));
        
+      //to match password with the given parameters
+       Matcher m = p.matcher(password);
     
-
-     /* public String registerUser(){
+          return m.matches();
+                       
+     }  
+ 
+      public String registerUser(){
         
         if(checkUserName()== true && checkPasswordComplexity() == true ){
             System.out.println("The username is correctly formatted and password meets complexity requirements");
@@ -96,7 +85,7 @@ public class login {
        
         
 }
-*/
+
        public void display(){
         System.out.println("entered username = " + username );
         System.out.println("entered password = " + password);
