@@ -17,6 +17,7 @@ public class Part1 {
           ll.checkUserName();
          ll.checkPasswordComplexity();
          ll.registerUser();
+         ll.loginUser();
         // ll.returnLoginStatus();
          ll.display();
     }

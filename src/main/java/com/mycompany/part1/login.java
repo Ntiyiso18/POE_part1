@@ -79,17 +79,27 @@ public class login {
             System.out.println("The username is correctly formatted and password meets complexity requirements");
         }
         else{
-            System.out.println("The username is incorrectly formatted and password does not meet complexity requirements"); 
+            System.out.println("The username is incorrectly formatted or password does not meet complexity requirements"); 
         }
         return null;
        
         
 }
+      public boolean loginUser(){
+        
+        if(username.equals(registerUser()) && password.equals(registerUser())){
+        return true;
+    }
+    else{
+        return false;
+    }
+      }
 
        public void display(){
-        System.out.println("entered username = " + username );
-        System.out.println("entered password = " + password);
            System.out.println("entered name = " + Name);
            System.out.println("entered lastname = " + lastname);
+           System.out.println("entered username = " + username );
+           System.out.println("entered password = " + password);
+           
 }
 }
