@@ -82,13 +82,13 @@ public class loginIT {
     @Test
     public void testCheckUserName() {
         System.out.println("checkUserName");
-        String username = "kyl_1";
+        String username = "kyle!!!!!!!";
         login instance = new login(username,"Ch&&sec@ke99!");
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.checkUserName(username);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-      //  fail("The test case is a prototype.");
+     
     }
 
     /**
@@ -97,13 +97,13 @@ public class loginIT {
     @Test
     public void testCheckPasswordComplexity() {
         System.out.println("checkPasswordComplexity");
-        String password = "Ch&&sec@ke99!";
+        String password = "Password";
         login instance = new login("kyl_1",password);
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.checkPasswordComplexity(password);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -112,14 +112,14 @@ public class loginIT {
     @Test
     public void testRegisterUser() {
         System.out.println("registerUser");
-        String username = "kyl_1";
-        String password = "Ch&&sec@ke99!";
+        String username = "kyle!!!!!!!";
+        String password = "Password";
         login instance = new login(username,password);
-        String expResult = "The username and password are successfully captured ";
+        String expResult = "The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character";
         String result = instance.registerUser(username, password);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -128,14 +128,14 @@ public class loginIT {
     @Test
     public void testLoginUser() {
         System.out.println("loginUser");
-        String Username = "kyl_1";
-        String Password = "Ch&&sec@ke99!";
+        String Username = "kyle!!!!!!!";
+        String Password = "password";
         login instance = new login("kyl_1","Ch&&sec@ke99!");
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.loginUser(Username, Password);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -144,16 +144,16 @@ public class loginIT {
     @Test
     public void testReturnLoginStatus() {
         System.out.println("returnLoginStatus");
-        String Username = "kyl_1";
-        String Password = "Ch&&sec@ke99!";
+        String Username = "kyle!!!!!!!";
+        String Password = "password";
         String Name = "Ntiyiso";
         String lastname = "Ndhlovu";
         login instance =  new login("kyl_1","Ch&&sec@ke99!");
-        String expResult = "welcome "+ Name +" "+ lastname+ " " + "it is great to see you again";
+        String expResult = "username or password incorrect, please try again";
         String result = instance.returnLoginStatus(Username, Password, Name, lastname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+       
     }
 
     /**
