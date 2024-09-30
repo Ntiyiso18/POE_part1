@@ -16,6 +16,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author RC_Student_lab
  */
 public class loginTest {
+
+   
+    
     
     
 
@@ -40,6 +43,7 @@ public class loginTest {
         login instance = new login();
         boolean expResult = false;
         boolean result = instance.checkUserName();
+         
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
       //  fail("The test case is a prototype.");
@@ -52,7 +56,7 @@ public class loginTest {
     public void testCheckPasswordComplexity() {
         System.out.println("checkPasswordComplexity");
         login instance = new login();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.checkPasswordComplexity();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -81,7 +85,7 @@ public class loginTest {
     public void testLoginUser() {
         System.out.println("loginUser");
         login instance = new login();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.loginUser();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -95,7 +99,14 @@ public class loginTest {
     public void testReturnLoginStatus() {
         System.out.println("returnLoginStatus");
         login instance = new login();
-        String expResult = "";
+        String expResult
+               ;
+        expResult = "Password"
+                + "Nt_i"
+                + "Password@12"
+                + "Nt_i"
+                + "Password@12"
+                + "Nt_i";
         String result = instance.returnLoginStatus();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -112,6 +123,60 @@ public class loginTest {
         instance.display();
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getUsername method, of class login.
+     */
+    @Test
+    public void testGetUsername() {
+        System.out.println("getUsername");
+        login instance = new login();
+        String expResult = "";
+        String result = instance.getUsername();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setUsername method, of class login.
+     */
+    @Test
+    public void testSetUsername() {
+        System.out.println("setUsername");
+        String username = "";
+        login instance = new login();
+        instance.setUsername(username);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getPassword method, of class login.
+     */
+    @Test
+    public void testGetPassword() {
+        System.out.println("getPassword");
+        login instance = new login();
+        String expResult = "";
+        String result = instance.getPassword();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setPassword method, of class login.
+     */
+    @Test
+    public void testSetPassword() {
+        System.out.println("setPassword");
+        String password = "";
+        login instance = new login();
+        instance.setPassword(password);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }

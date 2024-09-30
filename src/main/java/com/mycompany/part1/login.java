@@ -4,7 +4,7 @@
  */
 package com.mycompany.part1;
 
-import java.util.Scanner;
+
 import java.util.regex.*;
 
 /**
@@ -12,45 +12,36 @@ import java.util.regex.*;
  * @author RC_Student_lab
  */
 public class login {
-      //importing object scanner
-    Scanner poe = new Scanner(System.in);
+     
     //Matcher pt = pt.matcher(regex);
     
     //declarations
-    String username;
-    String password;
-    String Name;
-    String lastname;
+  private  String username;
+   private String password;
     
-    public void prompts(){
-        System.out.println("Enter your Name:");
-        Name = poe.next();
-        
-        System.out.println("Enter your lastname:");
-        lastname = poe.next();
-        
-        
-        
-        
+    
+    public String getUsername(){
+        return username;
+    }
+    public void setUsername(String username){
+        this.username = username;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public void setPassword(String password){
+        this.password = password;
     }
     
     
-    public boolean checkUserName(){
-        System.out.println("Enter your username:");
-        username = poe.next();
-       
-        System.out.println(username.contains("_"));
-        System.out.println(username.length() <= 5);
-        if(username.contains("_") && username.length() <= 5){
-           // return true;
-        }
-        return true;
     
-       
+    
+    public boolean checkUserName(String username){
+        return username.contains("_") && username.length() <= 5;
+ 
     }
-     public  boolean checkPasswordComplexity(){
-         System.out.println("Enter your password:");
-        password = poe.next();
+     public  boolean checkPasswordComplexity(String password){
+        
         
         //Regex to validate password
         String regex =  "^(?=.*[0-9])"
@@ -73,9 +64,9 @@ public class login {
                        
      }  
  
-      public String registerUser(){
+      public String registerUser(String username, String password){
         
-        if(checkUserName()== true && checkPasswordComplexity() == true ){
+        if(checkUserName(username)== true && checkPasswordComplexity(password) == true ){
             System.out.println("The username and password are successfully captured ");
         }
         else{
@@ -108,36 +99,34 @@ public class login {
 //        
 //        
 //    }
-      public boolean loginUser(){
-          if(username.equals(username) && password.equals(password)){
-              return true;
-          }
-          else{
-              return false;
-          }
+      public boolean loginUser(String username , String password){
+          
+         
+          return this.username.equals(username) && this.password.equals(password);
+          
         
        
       }
-      public String returnLoginStatus(){
-        if(loginUser() == true){
-            System.out.println("welcome " + Name + " " + lastname + " " + "it is great to see you again" );
-            //return true;
-                    //"welcome " + Name + " " + lastname + " " + "it is great to see you again";
+      public String returnLoginStatus(String username , String password , String Name , String lastname){
+        if(loginUser(this.username,this.password) == true){
+          // System.out.println("welcome " + Name + " " + lastname + " " + "it is great to see you again" );
+            return "login";
+                //  return  "welcome " + Name + " " + lastname + " " + "it is great to see you again";
         }
         else{
-             System.out.println("username or password incorrect, please try again");
-       // return null;
-                //"username or password incorrect, please try again";
+             //System.out.println("username or password incorrect, please try again");
+       return "login";
+               // return "username or password incorrect, please try again";
             
         }
-        return null;
+       // return null;
        
         
        
         
     }
 
-       public void display(){
+       public void display(String Name, String lastname){
            System.out.println("entered name = " + Name);
            System.out.println("entered lastname = " + lastname);
            System.out.println("entered username = " + username );
