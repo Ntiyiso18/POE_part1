@@ -12,12 +12,16 @@ import java.util.regex.*;
  * @author RC_Student_lab
  */
 public class login {
+    public login(String username ,String password){
+        this.username = username;
+        this.password = password;
+    }
   
     //declarations
   private  String username;
-   private String password;
+  private String password;
     
-    
+    //getters and setter
     public String getUsername(){
         return username;
     }
@@ -64,47 +68,36 @@ public class login {
  
       public String registerUser(String username, String password){
         
-       if(checkUserName(username)==true && checkPasswordComplexity(password)==true){
-            System.out.println("The username and password are successfully captured ");
-           return "true ";
+       if(checkUserName(username) && checkPasswordComplexity(password)){
+           return "The username and password are successfully captured ";
         }
         else{
-            System.out.println("The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character");
-           // return "The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character";
-        return "false";
-       }
-        
-        
+          
+            return "The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character";
        
-        
+       }
+   
     }
-//   
-      public boolean loginUser(String username , String password){
+   
+      public boolean loginUser(String Username , String Password){
           
          
-          return this.username.equals(username) && this.password.equals(password);
-          
+          return this.username.equals(Username) && this.password.equals(Password);
+         
         
        
       }
       public String returnLoginStatus(String Username , String Password , String Name , String lastname){
         if(loginUser(Username, Password)){
-            
-         // System.out.println("welcome " + Name + " " + lastname + " " + "it is great to see you again" );
-           // return "login";
-                  return  "welcome " + Name + " " + lastname + " " + "it is great to see you again";
+    
+        return  "welcome "+ Name +" "+ lastname+ " " + "it is great to see you again";
         }
         else{
-            // System.out.println("username or password incorrect, please try again");
-      // return "login unsuccessful";
-                return "username or password incorrect, please try again";
+        
+        return "username or password incorrect, please try again";
             
         }
-       // return null;
-       
-        
-       
-        
+      
     }
 
        public void display(String Name, String lastname , String Username , String Password){
