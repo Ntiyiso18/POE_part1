@@ -12,9 +12,7 @@ import java.util.regex.*;
  * @author RC_Student_lab
  */
 public class login {
-     
-    //Matcher pt = pt.matcher(regex);
-    
+  
     //declarations
   private  String username;
    private String password;
@@ -66,39 +64,21 @@ public class login {
  
       public String registerUser(String username, String password){
         
-        if(checkUserName(username)== true && checkPasswordComplexity(password) == true ){
+       if(checkUserName(username)==true && checkPasswordComplexity(password)==true){
             System.out.println("The username and password are successfully captured ");
+           return "true ";
         }
         else{
-            System.out.println("The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character"); 
-        }
-        return null;
+            System.out.println("The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character");
+           // return "The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character";
+        return "false";
+       }
+        
+        
        
         
     }
-//     public String registerUser(){
-//        
-//        if(checkUserName()== true){
-//            System.out.println("The username is correctly formatted");
-//        }
-//        else{
-//            System.out.println("The username is incorrectly formatted");
-//        }
-//        
-//        if(checkPasswordComplexity() == true){
-//            System.out.println("password meets complexity requirements");
-//        }
-//        else{
-//            System.out.println("password does not meet complexity requirements");
-//        }
-//        return null;
-//       
-//        
-//       
-//            
-//        
-//        
-//    }
+//   
       public boolean loginUser(String username , String password){
           
          
@@ -107,16 +87,17 @@ public class login {
         
        
       }
-      public String returnLoginStatus(String username , String password , String Name , String lastname){
-        if(loginUser(this.username,this.password) == true){
-          // System.out.println("welcome " + Name + " " + lastname + " " + "it is great to see you again" );
-            return "login";
-                //  return  "welcome " + Name + " " + lastname + " " + "it is great to see you again";
+      public String returnLoginStatus(String Username , String Password , String Name , String lastname){
+        if(loginUser(Username, Password)){
+            
+         // System.out.println("welcome " + Name + " " + lastname + " " + "it is great to see you again" );
+           // return "login";
+                  return  "welcome " + Name + " " + lastname + " " + "it is great to see you again";
         }
         else{
-             //System.out.println("username or password incorrect, please try again");
-       return "login";
-               // return "username or password incorrect, please try again";
+            // System.out.println("username or password incorrect, please try again");
+      // return "login unsuccessful";
+                return "username or password incorrect, please try again";
             
         }
        // return null;
@@ -126,11 +107,11 @@ public class login {
         
     }
 
-       public void display(String Name, String lastname){
+       public void display(String Name, String lastname , String Username , String Password){
            System.out.println("entered name = " + Name);
            System.out.println("entered lastname = " + lastname);
-           System.out.println("entered username = " + username );
-           System.out.println("entered password = " + password);
+           System.out.println("entered username = " + Username );
+           System.out.println("entered password = " + Password);
            
 }
 }
