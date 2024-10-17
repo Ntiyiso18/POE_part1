@@ -91,33 +91,47 @@ public class Part1 {
                       2. Show report
                       3. Quit
                      """;
-        String choice =JOptionPane.showInputDialog(options);
-               switch (choice){
-        case "1": JOptionPane.showInputDialog("how many tasks" );
-                     String response;
-    response =JOptionPane.showInputDialog("Enter Task name");
-    taskName = response;
-    
-   // response = JOptionPane.showInputDialog("Enter Task number");
-    taskNumber = Integer.parseInt(response);
-    int newArray [] = new int [taskNumber];
-    for (int i = 0; i< newArray.length; i++){
-        response = JOptionPane.showInputDialog(taskNumbr);
-        
-    }
-    
-    response = JOptionPane.showInputDialog("Enter Task description");
-    taskDescription = response;
+        String choice = JOptionPane.showInputDialog(options);
 
-      break;
-        case "2":
-              JOptionPane.showInputDialog(null, "Coming Soon!");
-         break;
-          case "3": 
-               JOptionPane.showInputDialog(null, "Quiting...");
-               System.exit(0);
-               break;
+switch (choice) {
+    case "1":
+        // ask for amount of tasks 
+        String taskCountInput = JOptionPane.showInputDialog("How many tasks?");
+        int taskCount = Integer.parseInt(taskCountInput); 
+
+        // Array to store task names and descriptions of the tasks entered
+        String[] newArray = new String[taskCount];
+
+        for (int i = 0; i < newArray.length; i++) {
+            // task number and ask for task name
+             taskName = JOptionPane.showInputDialog("Task Number " + (i + 1) + ": Enter Task name");
+
+            // task description
+             taskDescription = JOptionPane.showInputDialog("Task Number " + (i + 1) + ": Enter Task description");
+
+            // Store both task name and description with task number
+            newArray[i] = "Task " + (i + 1) + ": " + taskName + " - " + taskDescription;
+        }
+
+         
+        String allTasks = "";
+        for (int i = 0; i < newArray.length; i++) {
+             // Display task number, name, and description
+            allTasks += newArray[i] + "\n"; 
+        }
+        JOptionPane.showMessageDialog(null, allTasks);
+        break;
+
+    case "2":
+        JOptionPane.showInputDialog(null, "Coming Soon!");
+        break;
+
+    case "3":
+        JOptionPane.showInputDialog(null, "Quitting...");
+        System.exit(0);
+        break;
 }
+
 }
 }
 }
