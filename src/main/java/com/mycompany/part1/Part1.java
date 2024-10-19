@@ -27,10 +27,11 @@ public class Part1 {
         int taskNumber = 0;
         String taskDescription ="";
         String developerDetails = "";
+        int taskDuration = 0;
         
-       /* 
+       
         //prompts
-        System.out.println("Enter your Name:");
+       /* System.out.println("Enter your Name:");
         Name = poe1.next();
         
         System.out.println("Enter your lastname:");
@@ -81,9 +82,9 @@ public class Part1 {
         //calling the task class
        // Task tt = new Task();
         
-       // System.out.println(tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskNumber));
+//        System.out.println(tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskNumber));
     
-        String message = JOptionPane.showInputDialog("Welcome to EasyKanBan");
+        JOptionPane.showMessageDialog(null, "Welcome to EasyKanBan");
     while(true){
         String options =  """
                       ======Options=======
@@ -104,30 +105,42 @@ switch (choice) {
 
         for (int i = 0; i < newArray.length; i++) {
             // task number and ask for task name
-             taskName = JOptionPane.showInputDialog("Task Number " + (i + 1) + ": Enter Task name");
+             taskName = JOptionPane.showInputDialog( "Enter Task name");
 
             // task description
-             taskDescription = JOptionPane.showInputDialog("Task Number " + (i + 1) + ": Enter Task description");
+             taskDescription = JOptionPane.showInputDialog( ": Enter Task description");
+             
+             developerDetails = JOptionPane.showInputDialog( ": Enter Task developer details");
 
             // Store both task name and description with task number
             newArray[i] = "Task " + (i + 1) + ": " + taskName + " - " + taskDescription;
+//            Task tt = new Task(taskName, taskNumber,taskDescription, developerDetails, taskDuration);
+//            tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration);
         }
 
          
         String allTasks = "";
-        for (int i = 0; i < newArray.length; i++) {
-             // Display task number, name, and description
-            allTasks += newArray[i] + "\n"; 
-        }
+            for (String newArray1 : newArray) {
+                // Display task number, name, and description
+                allTasks += newArray1 + "\n";
+              //  Task tt = new Task();
+                //tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskCount);
+            }
+        // Task tt = new Task();
+       // tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskCount);
+        // JOptionPane.showMessageDialog(null, tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskCount));
+             Task tt = new Task(taskName, taskNumber,taskDescription, developerDetails, taskDuration);
+          JOptionPane.showMessageDialog( null, tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration));
         JOptionPane.showMessageDialog(null, allTasks);
         break;
 
+
     case "2":
-        JOptionPane.showInputDialog(null, "Coming Soon!");
+        JOptionPane.showMessageDialog(null, "Coming Soon!");
         break;
 
     case "3":
-        JOptionPane.showInputDialog(null, "Quitting...");
+        JOptionPane.showMessageDialog(null, "Quitting...");
         System.exit(0);
         break;
 }
