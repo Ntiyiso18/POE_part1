@@ -53,19 +53,18 @@ this.taskDescription = taskDescription;
   
     }
     public String createTaskID(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration ){
-     // System.out.println(taskName.charAt(1) + taskName.charAt(0));
-     //   System.out.println(taskNumber);
-      //  System.out.println(developerDetails.charAt(0) + developerDetails.charAt(1) + developerDetails.charAt(2));
-        
-     //   return ("TaskID " + taskName.charAt(0) + taskName.charAt(1) + ":" + taskNumber + ":" + developerDetails.substring(developerDetails.length()-3)).toUpperCase();
+     
+        return ("TaskID " + taskName.charAt(0) + taskName.charAt(1) + ":" + taskNumber + ":" + developerDetails.substring(developerDetails.length()-3)).toUpperCase();
+     
+    
        // Get first 2 letters of task name
-        String taskNamePart = taskName.length() >= 2 ? taskName.substring(0, 2) : taskName;
-        
-        // Get last 3 letters of developer details
-        String developerPart = developerDetails.length() >= 3 ? developerDetails.substring(developerDetails.length() - 3) : developerDetails;
-        
-        // Combine to form task ID
-        return taskNamePart.toUpperCase()+ ":" + taskNumber + ":" + developerPart.toUpperCase();
+//        String taskNamePart = taskName.length() >= 2 ? taskName.substring(0, 2) : taskName;
+//        
+//        // Get last 3 letters of developer details
+//        String developerPart = developerDetails.length() >= 3 ? developerDetails.substring(developerDetails.length() - 3) : developerDetails;
+//        
+//        // Combine to form task ID
+//        return " TaskID: " + taskNamePart.toUpperCase()+ ":" + taskNumber + ":" + developerPart.toUpperCase();
        //use case statemnets not if statements
        //display full details after entering the task details individually
        //suggestion use for loop for task id e.g for(task id){ sout the method
