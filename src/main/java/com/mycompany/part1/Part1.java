@@ -6,6 +6,7 @@ package com.mycompany.part1;
 import java.util.Scanner;
 import javax.swing.*;
 
+
 /**
  *
  * @author RC_Student_lab
@@ -82,6 +83,8 @@ public class Part1 {
        
     
         JOptionPane.showMessageDialog(null, "Welcome to EasyKanBan");
+        
+        String[] optionsToChoose = {"To Do", "Doing", "Done"};
     while(true){
          Task tt = new Task(taskName, taskNumber,taskDescription, developerDetails, taskDuration);
         String options =  """
@@ -95,14 +98,16 @@ public class Part1 {
 switch (choice) {
     case "1":
         // ask for amount of tasks 
-      //  taskNumber = Integer.parseInt(JOptionPane.showInputDialog("How many tasks do you want to enter"));
-String taskCountInput = JOptionPane.showInputDialog("How many tasks do you want to enter");
-        int taskCount = Integer.parseInt(taskCountInput);
+       int taskNumber1 = Integer.parseInt(JOptionPane.showInputDialog("How many tasks do you want to enter"));
+     // taskNumber = JOptionPane.showInputDialog("How many tasks do you want to enter");
+      //  int taskNumber = Integer.parseInt(taskNumberInput);
         // Array to store task names and descriptions of the tasks entered
-        String[] newArray = new String[taskCount];
+     // int[] newArray = new int [taskNumber1];
+       Task[] taskObjects = new Task [taskNumber1];
        
 
-        for (int i = 0; i < newArray.length; i++) {
+        for (int i = 0; i < taskNumber1; i++) {
+           //  int[] newArray1 = new int [i + 1];
 //             Task tt = new Task(taskName, taskNumber,taskDescription, developerDetails, taskDuration);
 //          JOptionPane.showMessageDialog( null, tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration));
             // task number and ask for task name
@@ -114,58 +119,65 @@ String taskCountInput = JOptionPane.showInputDialog("How many tasks do you want 
              developerDetails = JOptionPane.showInputDialog( " Enter Task developer details");
             taskDuration = Integer.parseInt(JOptionPane.showInputDialog("Enter duration In HRS")); 
            // Task tt = new Task(taskName, taskNumber,taskDescription, developerDetails, taskDuration);
-          JOptionPane.showMessageDialog( null, tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration));
-             
-
+           
+          JOptionPane.showMessageDialog( null, tt.createTaskID(taskName, i, taskDescription, developerDetails, taskDuration));
+            String taskStatus = (String) JOptionPane.showInputDialog(null, "Choose task status", "Select task status",
+                    JOptionPane.QUESTION_MESSAGE,null,optionsToChoose, optionsToChoose[2]);
+            taskObjects [i] = new Task(taskName, i, taskDescription, developerDetails, taskDuration);
+// JOptionPane.showMessageDialog(null,tt.printTaskDetails( taskName, taskNumber,taskDescription, developerDetails, taskDuration);
+ JOptionPane.showMessageDialog(null,tt.printTaskDetails( taskName, i,taskDescription, developerDetails, taskDuration,taskStatus) + "\n" + tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration) );
             // Store both task name and description with task number
-            newArray[i] = "Task " + (i) + ": " + taskName + " - " + taskDescription;
+           // newArray1[i] = "Task " + (i + 1) + ": " + taskName + " - " + taskDescription;
+           
            
         }
         
 
          
-//        String allTasks = "";
-//            for (String newArray1 : newArray) {
-//                // Display task number, name, and description
-//                allTasks += newArray1 + "\n";
+       // String allTasks = "";
+      //     for (String newArray1 : newArray) {
+                // Display task number, name, and description
+      //         allTasks += newArray1 + "\n";
 //              
-//            }
+        //    }
        
             
-        //JOptionPane.showMessageDialog(null, allTasks);
+      //  JOptionPane.showMessageDialog(null, allTasks);
           
-             while(true){
-        String option2 = """
-                          ======Options=======
-                         1. To do
-                         2.Doing
-                         3.Done
-                        """;
-         String opt = JOptionPane.showInputDialog(option2);
-    switch (opt){
-        case "1":
-   JOptionPane.showMessageDialog(null, "To do");
-   
-    
-   JOptionPane.showMessageDialog(null,tt.printTaskDetails( taskName, taskNumber,taskDescription, developerDetails, taskDuration) + "\n" + tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration) +  "\n" +  "taskStatus: TO DO" );
-    break;
-    
-        case "2":
-        JOptionPane.showMessageDialog(null, "Doing");
+//             while(true){
+//        String option2 = """
+//                          ======Options=======
+//                         1. To do
+//                         2.Doing
+//                         3.Done
+//                        """;
+//         String opt = JOptionPane.showInputDialog(option2);
+//    switch (opt){
+//        case "1":
+//   JOptionPane.showMessageDialog(null, "To do");
+//   
+//    
+//   JOptionPane.showMessageDialog(null,tt.printTaskDetails( taskName, taskNumber,taskDescription, developerDetails, taskDuration) + "\n" + tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration) +  "\n" +  "taskStatus: To Do" );
+//    break;
+//    
+//        case "2":
+//        JOptionPane.showMessageDialog(null, "Doing");
+//        
+//        JOptionPane.showMessageDialog(null,tt.printTaskDetails( taskName, taskNumber,taskDescription, developerDetails, taskDuration) + "\n" + tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration) +  "\n" +  "taskStatus: Doing" );
+//        break;
+//        
+//        case "3":
+//        JOptionPane.showMessageDialog(null, "Done");
+//        
+//        JOptionPane.showMessageDialog(null,tt.printTaskDetails( taskName, taskNumber,taskDescription, developerDetails, taskDuration) + "\n" + tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration) +  "\n" +  "taskStatus: Done" );
+//        //   minutes += tt.returnHours
+//        break;
+//          
+//    }
+//             }
         
-        JOptionPane.showMessageDialog(null,tt.printTaskDetails( taskName, taskNumber,taskDescription, developerDetails, taskDuration) + "\n" + tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration) +  "\n" +  "taskStatus: Doing" );
-        break;
-        
-        case "3":
-        JOptionPane.showMessageDialog(null, "Done");
-        JOptionPane.showMessageDialog(null,tt.printTaskDetails( taskName, taskNumber,taskDescription, developerDetails, taskDuration) + "\n" + tt.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration) +  "\n" +  "taskStatus: Done" );
-        break;
-          
-    }
-             }
-        
     
-          
+          break;
 
 
     case "2":
@@ -177,7 +189,12 @@ String taskCountInput = JOptionPane.showInputDialog("How many tasks do you want 
         System.exit(0);
         break;
 }
-
+// fix the 0
+// make second task prompt appear after everything
+// calculate the overall hrs
+// make it go back to prompts after displaying
+// make it go back yo main menu after everthing
+//
 }
 }
 }

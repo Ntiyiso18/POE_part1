@@ -22,6 +22,7 @@ this.taskDescription = taskDescription;
    private String taskDescription;
    private String developerDetails;
    private int taskDuration;
+   private int hours;
    
   
    
@@ -72,8 +73,10 @@ this.taskDescription = taskDescription;
        //method should take parameters
       //
     }
-    public String printTaskDetails(String taskName, int taskNumber,String taskDescription, String developerDetails, int taskDuration){
-        return "TaskName: " + taskName + "\n" + "TaskNumber: "+ taskNumber + "\n" + "TaskDescription: " + taskDescription + "\n" + " DeveloperDetails: " + developerDetails + "\n" + "TaskDuration: " + taskDuration;
+    public String printTaskDetails(String taskName, int taskNumber,String taskDescription, String developerDetails, int taskDuration, String taskStatus){
+        return "TaskName: " + taskName + "\n" + "TaskNumber: "+ taskNumber + "\n" + "TaskDescription: " + taskDescription + "\n" + " DeveloperDetails: " + developerDetails + "\n" + "TaskDuration: " + taskDuration + "\n" + "taskStatus:" + taskStatus;
     }
-    
+     //public int returnHours(int hours){
+      //   return "Total hours"
+    // }
 }
