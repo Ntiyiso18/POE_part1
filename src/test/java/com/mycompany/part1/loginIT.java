@@ -36,18 +36,7 @@ public class loginIT {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setUsername method, of class login.
-     */
-    @Test
-    public void testSetUsername() {
-        System.out.println("setUsername");
-        String username = "";
-        login instance = null;
-        instance.setUsername(username);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
 
     /**
      * Test of getPassword method, of class login.
@@ -63,18 +52,8 @@ public class loginIT {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setPassword method, of class login.
-     */
-    @Test
-    public void testSetPassword() {
-        System.out.println("setPassword");
-        String password = "";
-        login instance = null;
-        instance.setPassword(password);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
+   
 
     /**
      * Test of checkUserName method, of class login.
