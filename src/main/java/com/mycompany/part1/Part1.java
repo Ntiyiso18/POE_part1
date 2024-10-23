@@ -47,27 +47,34 @@ public class Part1 {
         password = poe1.next();
       
        //calling the login class
-       login ll = new login(username,password);
+       login ll = new login();
+        
         
         //calling register user method
-         System.out.println(ll.registerUser(username , password));
+         System.out.println(ll.registerUser(username , password,Name,lastname));
+         
+         //if statement to stop code if the password and username do not meet requirements
+         if (!ll.checkUserName(username) || !ll.checkPasswordComplexity(password)) {
+            System.out.println("Username or password does not meet the requirements.");
+            return; 
+         }
+         System.out.println("=====login=====");
          
         
          
-         //if statement to stop code if the password and username do not meet requirements
-         if( ll.checkUserName(username) && ll.checkPasswordComplexity(password)){
+         
+         
              System.out.println("enter username to login");
          String Username = poe.next();
          System.out.println("enter password to login");
          String Password = poe.next();
-             
+         
          //calling the reurn login status method
-         System.out.println(ll.loginUser(username, password));
-             System.out.println(ll.returnLoginStatus(Username , Password , Name , lastname));
-             ll.display(Name , lastname , Username ,Password);
-    }
+         boolean LOGIN = ll.loginUser(Username, Password);
+         System.out.println(ll.returnLoginStatus(LOGIN));
+             
+         if(LOGIN){
     
-        
  final JDialog dialog = new JDialog();
         dialog.setAlwaysOnTop(true);
         
@@ -120,7 +127,8 @@ switch (choice) {
           // calling the print task details method together with the createTaskID method to display all the details of the tasks
          JOptionPane.showMessageDialog(dialog,tt.printTaskDetails( taskName, i,taskDescription, developerDetails, taskDuration,taskStatus) +
          "\n" + tt.createTaskID(taskName, i, taskDescription, developerDetails, taskDuration) );
-           
+         
+          // JOptionPane.showMessageDialog(dialog, tt.returnHours(tasks));
         }
      
     
@@ -143,5 +151,7 @@ switch (choice) {
     
 }
 }
+}
+
     
 

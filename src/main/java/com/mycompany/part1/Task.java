@@ -76,7 +76,12 @@ this.taskDescription = taskDescription;
     public String printTaskDetails(String taskName, int taskNumber,String taskDescription, String developerDetails, int taskDuration, String taskStatus){
         return "TaskName: " + taskName + "\n" + "TaskNumber: "+ taskNumber + "\n" + "TaskDescription: " + taskDescription + "\n" + " DeveloperDetails: " + developerDetails + "\n" + "TaskDuration: " + taskDuration + "\n" + "taskStatus:" + taskStatus;
     }
-     //public int returnHours(int hours){
-      //   return "Total hours"
-    // }
-}
+     public int returnHours(Task[] tasks){
+         int totalHours = 0;
+         for (Task task : tasks) {
+            totalHours += task.gettaskDuration();
+        }
+        return totalHours;
+    }
+     }
+

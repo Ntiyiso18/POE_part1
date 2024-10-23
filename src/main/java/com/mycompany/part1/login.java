@@ -12,14 +12,16 @@ import java.util.regex.*;
  * @author RC_Student_lab
  */
 public class login {
-    public login(String username ,String password){
-        this.username = username;
-        this.password = password;
-    }
+//    public login(String username ,String password){
+//        this.username = username;
+//        this.password = password;
+//    }
   
     //declarations
   private  String username;
   private String password;
+  private String name;
+  private String lastname;
     
     //getters and setter
     public String getUsername(){
@@ -59,17 +61,30 @@ public class login {
                        
      }  
  
-      public String registerUser(String username, String password){
-        
-       if(checkUserName(username) && checkPasswordComplexity(password)){
-           return "The username and password are successfully captured ";
-        }
-        else{
-          
-            return "The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character";
-       
-       }
-   
+      public String registerUser(String username, String password, String name, String lastname){
+//           this.username = username;
+//        this.password = password;
+//        
+//       if(checkUserName(username) && checkPasswordComplexity(password)){
+//           return "The username and password are successfully captured ";
+//        }
+//        else{
+//          
+//            return "The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character";
+//       
+//       }
+         if(!checkUserName(username)){
+             return "The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length";
+             
+         }
+         if(!checkPasswordComplexity(password)){
+             return "password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character";
+         }
+         this.name = name;
+         this.lastname = lastname;
+         this.username = username;
+         this.password = password;
+        return "The username and password are successfully captured "; 
     }
    
       public boolean loginUser(String Username , String Password){
@@ -80,10 +95,10 @@ public class login {
         
        
       }
-      public String returnLoginStatus(String Username , String Password , String Name , String lastname){
-        if(loginUser(Username, Password)){
+      public String returnLoginStatus(boolean login){
+        if(login){
     
-        return  "welcome "+ Name +" "+ lastname+ " " + "it is great to see you again";
+        return  "welcome "+ this.name +" "+ this.lastname+ " " + "it is great to see you again";
         }
         else{
         
