@@ -17,7 +17,7 @@ public class Part1 {
          //importing object scanner
     Scanner poe = new Scanner(System.in);
     Scanner poe1 = new Scanner(System.in);
-   
+ //  Task validator = new Task();
  
         //declarations
         String Name;
@@ -109,6 +109,14 @@ switch (choice) {
 
             // prompt for task description
              taskDescription = JOptionPane.showInputDialog( " Enter Task description");
+//             TaskValidator validator = new TaskValidator();
+              boolean isValid = tt.checkTaskDescription(taskDescription);
+              if (isValid) {
+            JOptionPane.showMessageDialog(null, "The task description is valid.");
+        } else {
+            JOptionPane.showMessageDialog(null, "The task description is long. It should be not more than 50 characters long.");
+        }
+            
              
              //prompt for developer details
              developerDetails = JOptionPane.showInputDialog( " Enter Task developer details");
@@ -128,7 +136,9 @@ switch (choice) {
          JOptionPane.showMessageDialog(dialog,tt.printTaskDetails( taskName, i,taskDescription, developerDetails, taskDuration,taskStatus) +
          "\n" + tt.createTaskID(taskName, i, taskDescription, developerDetails, taskDuration) );
          
-          // JOptionPane.showMessageDialog(dialog, tt.returnHours(tasks));
+           int totalHours = tt.returnHours(taskDuration);
+           JOptionPane.showMessageDialog(null, "The total task duration is: " + totalHours + " hours.");
+    
         }
      
     

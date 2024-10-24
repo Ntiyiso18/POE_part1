@@ -50,7 +50,7 @@ this.taskDescription = taskDescription;
     
     public boolean checkTaskDescription(String taskDescription){
         
-        return taskDescription.length()>=50;
+        return taskDescription.length()<=50;
   
     }
     public String createTaskID(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration ){
@@ -76,12 +76,8 @@ this.taskDescription = taskDescription;
     public String printTaskDetails(String taskName, int taskNumber,String taskDescription, String developerDetails, int taskDuration, String taskStatus){
         return "TaskName: " + taskName + "\n" + "TaskNumber: "+ taskNumber + "\n" + "TaskDescription: " + taskDescription + "\n" + " DeveloperDetails: " + developerDetails + "\n" + "TaskDuration: " + taskDuration + "\n" + "taskStatus:" + taskStatus;
     }
-     public int returnHours(Task[] tasks){
-         int totalHours = 0;
-         for (Task task : tasks) {
-            totalHours += task.gettaskDuration();
-        }
-        return totalHours;
+     public int returnHours( int taskDuration){
+       return taskDuration;
     }
      }
 

@@ -77,7 +77,7 @@ public class loginIT {
     public void testCheckPasswordComplexity() {
         System.out.println("checkPasswordComplexity");
         String password = "Password";
-        login instance = new login("kyl_1",password);
+        login instance = new login();
         boolean expResult = false;
         boolean result = instance.checkPasswordComplexity(password);
         assertEquals(expResult, result);
@@ -93,9 +93,9 @@ public class loginIT {
         System.out.println("registerUser");
         String username = "kyle!!!!!!!";
         String password = "Password";
-        login instance = new login(username,password);
+        login instance = new login();
         String expResult = "The username is not correctly formatted please ensure your username contains an under and is no more than 5 characters in length or password is not correctly formatted please ensure that the password contains atleast 8 characters, a capital, a number and a special character";
-        String result = instance.registerUser(username, password);
+        String result = instance.registerUser(username, password,name, lastname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
@@ -109,7 +109,7 @@ public class loginIT {
         System.out.println("loginUser");
         String Username = "kyle!!!!!!!";
         String Password = "password";
-        login instance = new login("kyl_1","Ch&&sec@ke99!");
+        login instance = new login();
         boolean expResult = false;
         boolean result = instance.loginUser(Username, Password);
         assertEquals(expResult, result);
@@ -127,9 +127,9 @@ public class loginIT {
         String Password = "password";
         String Name = "Ntiyiso";
         String lastname = "Ndhlovu";
-        login instance =  new login("kyl_1","Ch&&sec@ke99!");
+        login instance =  new login();
         String expResult = "username or password incorrect, please try again";
-        String result = instance.returnLoginStatus(Username, Password, Name, lastname);
+        String result = instance.returnLoginStatus(login);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
