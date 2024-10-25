@@ -9,20 +9,14 @@ package com.mycompany.part1;
  * @author RC_Student_lab
  */
 public class Task {
-    public Task(String taskName, int taskNumber,String taskDescription, String developerDetails, int taskDuration){
-        this. taskName =  taskName;
-this.taskNumber = taskNumber;
-this. developerDetails =  developerDetails;
-this.taskDuration = taskDuration;
-this.taskDescription = taskDescription;
-    }
+    
     
    private String taskName;
    private int taskNumber;
    private String taskDescription;
    private String developerDetails;
    private int taskDuration;
-   private int hours;
+  // private int hours;
    
   
    
@@ -76,8 +70,20 @@ this.taskDescription = taskDescription;
     public String printTaskDetails(String taskName, int taskNumber,String taskDescription, String developerDetails, int taskDuration, String taskStatus){
         return "TaskName: " + taskName + "\n" + "TaskNumber: "+ taskNumber + "\n" + "TaskDescription: " + taskDescription + "\n" + " DeveloperDetails: " + developerDetails + "\n" + "TaskDuration: " + taskDuration + "\n" + "taskStatus:" + taskStatus;
     }
-     public int returnHours( int taskDuration){
-       return taskDuration;
+//     public int returnHours( int taskDuration){
+//       return taskDuration;
+//    }
+    public int returnHours(int[] totalHrs,String taskName, int taskNumber,String taskDescription, String developerDetails, int taskDuration) {
+    int totalHours = 0;
+    for (int duration : totalHrs) {
+        totalHours += duration;  
     }
+     this.taskName =  taskName;
+this.taskNumber = taskNumber;
+this. developerDetails =  developerDetails;
+this.taskDuration = taskDuration;
+this.taskDescription = taskDescription;
+    return totalHours;
+}
      }
 

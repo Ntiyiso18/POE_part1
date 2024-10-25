@@ -86,7 +86,7 @@ public class Part1 {
         String[] optionsToChoose = {"To Do", "Doing", "Done"};
     while(ll.loginUser(username, password)){
         //calling the task classs
-         Task tt = new Task(taskName, taskNumber,taskDescription, developerDetails, taskDuration);
+         Task tt = new Task();
         String options =  """
                       ======Options=======
                       1.Add tasks
@@ -101,9 +101,12 @@ switch (choice) {
        int taskNumber1 = Integer.parseInt(JOptionPane.showInputDialog("How many tasks do you want to enter"));
        //Array for auto generating the task number
        Task[] tasknumber = new Task [taskNumber1];
-       
+       int[] totalHrs = new int[taskNumber1];
+      int totalHours;
 
-        for (int i = 0; i < taskNumber1; i++) {
+        for (int i = 0;  i < taskNumber1; i++) {
+            
+             tasknumber[i] = new Task();
             // prompt for task name
              taskName = JOptionPane.showInputDialog( "Enter Task name");
 
@@ -112,9 +115,9 @@ switch (choice) {
 //             TaskValidator validator = new TaskValidator();
               boolean isValid = tt.checkTaskDescription(taskDescription);
               if (isValid) {
-            JOptionPane.showMessageDialog(null, "The task description is valid.");
+            JOptionPane.showMessageDialog(dialog, "The task description is successfuly captured.");
         } else {
-            JOptionPane.showMessageDialog(null, "The task description is long. It should be not more than 50 characters long.");
+            JOptionPane.showMessageDialog(dialog, "The task description is too long. It should be not more than 50 characters long.");
         }
             
              
@@ -122,7 +125,10 @@ switch (choice) {
              developerDetails = JOptionPane.showInputDialog( " Enter Task developer details");
              
              //prompt for task duration
-            taskDuration = Integer.parseInt(JOptionPane.showInputDialog("Enter Task duration (In Hrs)")); 
+            taskDuration = Integer.parseInt(JOptionPane.showInputDialog("Enter Task duration  in hours:"));
+            //totalHours += taskDuration;
+            totalHrs[i] = taskDuration;
+            
           
            //calling the createTaskID from the task class using joption to return the task ID
           JOptionPane.showMessageDialog( dialog, tt.createTaskID(taskName, i, taskDescription, developerDetails, taskDuration));
@@ -130,16 +136,22 @@ switch (choice) {
           //creating a drop down menu for task status
             String taskStatus = (String) JOptionPane.showInputDialog(dialog, "Choose task status", "Select task status",
                     JOptionPane.QUESTION_MESSAGE,null,optionsToChoose, optionsToChoose[2]);
-            tasknumber [i] = new Task(taskName, i, taskDescription, developerDetails, taskDuration);
+            tasknumber [i] = new Task();
             
           // calling the print task details method together with the createTaskID method to display all the details of the tasks
          JOptionPane.showMessageDialog(dialog,tt.printTaskDetails( taskName, i,taskDescription, developerDetails, taskDuration,taskStatus) +
          "\n" + tt.createTaskID(taskName, i, taskDescription, developerDetails, taskDuration) );
          
-           int totalHours = tt.returnHours(taskDuration);
-           JOptionPane.showMessageDialog(null, "The total task duration is: " + totalHours + " hours.");
-    
         }
+        // Display the total task duration
+         totalHours = tt.returnHours(totalHrs,taskName, taskNumber, taskDescription, developerDetails, taskDuration); 
+         //totalHours += taskDuration;
+         //totalHours ++;
+        JOptionPane.showMessageDialog(dialog, "The total task duration is: " + totalHours + " hours.");
+        
+    
+    
+        
      
     
     break;
