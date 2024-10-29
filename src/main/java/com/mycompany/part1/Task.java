@@ -44,12 +44,20 @@ public class Task {
     
     public boolean checkTaskDescription(String taskDescription){
         
-        return taskDescription.length()<=50;
+       // return taskDescription.length()<=50;
+       if(taskDescription.length()<=50){
+           System.out.println("Task successfully captured");
+        return true;
+        
+    }else{
+           System.out.println("Please enter task description of less than 50 characters");
+           return false;
+       }
   
     }
     public String createTaskID(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration ){
      
-        return ("TaskID " + taskName.charAt(0) + taskName.charAt(1) + ":" + taskNumber + ":" + developerDetails.substring(developerDetails.length()-3)).toUpperCase();
+        return ("Task ID " + taskName.charAt(0) + taskName.charAt(1) + ":" + taskNumber + ":" + developerDetails.substring(developerDetails.length()-3)).toUpperCase();
      
     
        // Get first 2 letters of task name
