@@ -95,9 +95,9 @@ public class TaskIT {
     @Test
     public void testCheckTaskDescription() {
         System.out.println("checkTaskDescription");
-        String taskDescription = "create add task feature";
+        String taskDescription = "create add task featurecreate add task featurecreate add task featurecreate add task featureVVVcreate add task featurecreate add task featurecreate add task featurecreate add task featurecreate add task featurecreate add task featurecreate add task featurecreate add task featurecreate add task featurecreate add task featurecreate add task feature";
         Task instance = new Task();
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.checkTaskDescription(taskDescription);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
