@@ -110,13 +110,13 @@ public class TaskIT {
     @Test
     public void testCreateTaskID() {
         System.out.println("createTaskID");
-        String taskName = "add login feature";
+        String taskName = "login feature";
         int taskNumber = 1;
         String taskDescription = "create login to authenticate users";
-        String developerDetails = "Robyn Harrison ";
-        int taskDuration = 0;
+        String developerDetails = "Robyn Harrison";
+        int taskDuration = 8;
         Task instance = new Task();
-        String expResult = "AD:1:BYN";
+        String expResult = "LO:1:SON";
         String result = instance.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -147,17 +147,17 @@ public class TaskIT {
      * Test of returnHours method, of class Task.
      */
     @Test
-    public void testReturnHours() {
+    public void testReturnTotalHours() {
         System.out.println("returnHours");
         int[] totalHrs = new int []{10,11,12,55,1};
-        String taskName = "hhh";
+        String taskName = "login feature";
         int taskNumber = 5;
-        String taskDescription = "vvv";
-        String developerDetails = "mjjj";
+        String taskDescription = "create login to authenticate users";
+        String developerDetails = "Robyn Harrison";
         int taskDuration = 10+11+12+55+1;
         Task instance = new Task();
         int expResult = 89;
-        int result = instance.returnHours(totalHrs, taskName, taskNumber, taskDescription, developerDetails, taskDuration);
+        int result = instance.returnTotalHours(totalHrs, taskName, taskNumber, taskDescription, developerDetails, taskDuration);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");

@@ -55,7 +55,7 @@ public class Part1 {
          
          //if statement to stop code if the password and username do not meet requirements
          if (!ll.checkUserName(username) || !ll.checkPasswordComplexity(password)) {
-            System.out.println("Username or password does not meet the requirements.");
+           // System.out.println("Username or password does not meet the requirements.");
             return; 
          }
          System.out.println("=====login=====");
@@ -109,16 +109,12 @@ switch (choice) {
              tasknumber[i] = new Task();
             // prompt for task name
              taskName = JOptionPane.showInputDialog( "Enter Task name");
+      do {
+                taskDescription = JOptionPane.showInputDialog("Enter Task description");
+                boolean isValid = tt.checkTaskDescription(taskDescription);
+                 } while (taskDescription.length() > 50);
 
-            // prompt for task description
-             taskDescription = JOptionPane.showInputDialog( " Enter Task description");
-//             TaskValidator validator = new TaskValidator();
-              boolean isValid = tt.checkTaskDescription(taskDescription);
-              if (isValid) {
-            JOptionPane.showMessageDialog(dialog, "The task description is successfuly captured.");
-        } else {
-            JOptionPane.showMessageDialog(dialog, "The task description is too long. It should be not more than 50 characters long.");
-        }
+        
             
              
              //prompt for developer details
@@ -126,7 +122,7 @@ switch (choice) {
              
              //prompt for task duration
             taskDuration = Integer.parseInt(JOptionPane.showInputDialog("Enter Task duration  in hours:"));
-            //totalHours += taskDuration;
+            
             totalHrs[i] = taskDuration;
             
           
@@ -144,9 +140,8 @@ switch (choice) {
          
         }
         // Display the total task duration
-         totalHours = tt.returnHours(totalHrs,taskName, taskNumber, taskDescription, developerDetails, taskDuration); 
-         //totalHours += taskDuration;
-         //totalHours ++;
+         totalHours = tt.returnTotalHours(totalHrs,taskName, taskNumber, taskDescription, developerDetails, taskDuration); 
+        
         JOptionPane.showMessageDialog(dialog, "The total task duration is: " + totalHours + " hours.");
         
     

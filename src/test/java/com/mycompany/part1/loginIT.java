@@ -17,24 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class loginIT {
     
-    public loginIT() {
-    }
     
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
 
     /**
      * Test of getUsername method, of class login.
@@ -70,13 +53,13 @@ public class loginIT {
     @Test
     public void testCheckUserName() {
         System.out.println("checkUserName");
-        String username = "";
+        String username = "n_";
         login instance = new login();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.checkUserName(username);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      //  fail("The test case is a prototype.");
     }
 
     /**
@@ -85,13 +68,13 @@ public class loginIT {
     @Test
     public void testCheckPasswordComplexity() {
         System.out.println("checkPasswordComplexity");
-        String password = "";
+        String password = "Password@12";
         login instance = new login();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.checkPasswordComplexity(password);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      //  fail("The test case is a prototype.");
     }
 
     /**
@@ -100,16 +83,16 @@ public class loginIT {
     @Test
     public void testRegisterUser() {
         System.out.println("registerUser");
-        String username = "";
-        String password = "";
-        String name = "";
-        String lastname = "";
+        String username = "n_";
+        String password = "Password@12";
+        String name = "Ntiyiso";
+        String lastname = "Ndhlovu";
         login instance = new login();
-        String expResult = "";
+        String expResult = "The username and password are successfully captured ";
         String result = instance.registerUser(username, password, name, lastname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -118,14 +101,14 @@ public class loginIT {
     @Test
     public void testLoginUser() {
         System.out.println("loginUser");
-        String Username = "";
-        String Password = "";
+        String Username = "n_";
+        String Password = "Password@12";
         login instance = new login();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.loginUser(Username, Password);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      //  fail("The test case is a prototype.");
     }
 
     /**
@@ -134,13 +117,13 @@ public class loginIT {
     @Test
     public void testReturnLoginStatus() {
         System.out.println("returnLoginStatus");
-        boolean login = false;
+        boolean login = true;
         login instance = new login();
         String expResult = "";
         String result = instance.returnLoginStatus(login);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**

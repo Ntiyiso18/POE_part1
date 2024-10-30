@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.part1;
+import javax.swing.*;
 
 /**
  *
@@ -46,18 +47,25 @@ public class Task {
         
        // return taskDescription.length()<=50;
        if(taskDescription.length()<=50){
-           System.out.println("Task successfully captured");
-        return true;
-        
-    }else{
-           System.out.println("Please enter task description of less than 50 characters");
-           return false;
+            
+            JOptionPane.showMessageDialog(null, "The task description is successfuly captured.");
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(null, "The task description is too long. It should be not more than 50 characters long.");
+            return false;
+        }
+//           System.out.println("Task successfully captured");
+//        return true;
+//        
+//    }else{
+//           System.out.println("Please enter task description of less than 50 characters");
+//           return false;
        }
   
-    }
+    
     public String createTaskID(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration ){
      
-        return ("Task ID " + taskName.charAt(0) + taskName.charAt(1) + ":" + taskNumber + ":" + developerDetails.substring(developerDetails.length()-3)).toUpperCase();
+        return (taskName.substring(0,2) + ":" + taskNumber + ":" + developerDetails.substring(developerDetails.length()-3)).toUpperCase();
      
     
        // Get first 2 letters of task name
@@ -81,7 +89,7 @@ public class Task {
 //     public int returnHours( int taskDuration){
 //       return taskDuration;
 //    }
-    public int returnHours(int[] totalHrs,String taskName, int taskNumber,String taskDescription, String developerDetails, int taskDuration) {
+    public int returnTotalHours(int[] totalHrs,String taskName, int taskNumber,String taskDescription, String developerDetails, int taskDuration) {
     int totalHours = 0;
     for (int duration : totalHrs) {
         totalHours += duration;  
