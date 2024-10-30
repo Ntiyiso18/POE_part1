@@ -17,7 +17,7 @@ public class Part1 {
          //importing object scanner
     Scanner poe = new Scanner(System.in);
     Scanner poe1 = new Scanner(System.in);
- //  Task validator = new Task();
+ 
  
         //declarations
         String Name;
@@ -55,7 +55,7 @@ public class Part1 {
          
          //if statement to stop code if the password and username do not meet requirements
          if (!ll.checkUserName(username) || !ll.checkPasswordComplexity(password)) {
-           // System.out.println("Username or password does not meet the requirements.");
+           
             return; 
          }
          System.out.println("=====login=====");
@@ -99,6 +99,7 @@ switch (choice) {
     case "1":
         //prompt to ask for the number of tasks 
        int taskNumber1 = Integer.parseInt(JOptionPane.showInputDialog("How many tasks do you want to enter"));
+       
        //Array for auto generating the task number
        Task[] tasknumber = new Task [taskNumber1];
        int[] totalHrs = new int[taskNumber1];
@@ -127,7 +128,7 @@ switch (choice) {
             
           
            //calling the createTaskID from the task class using joption to return the task ID
-          JOptionPane.showMessageDialog( dialog, tt.createTaskID(taskName, i, taskDescription, developerDetails, taskDuration));
+          JOptionPane.showMessageDialog( dialog, tt.createTaskID(taskName, i, developerDetails));
           
           //creating a drop down menu for task status
             String taskStatus = (String) JOptionPane.showInputDialog(dialog, "Choose task status", "Select task status",
@@ -136,7 +137,7 @@ switch (choice) {
             
           // calling the print task details method together with the createTaskID method to display all the details of the tasks
          JOptionPane.showMessageDialog(dialog,tt.printTaskDetails( taskName, i,taskDescription, developerDetails, taskDuration,taskStatus) +
-         "\n" + tt.createTaskID(taskName, i, taskDescription, developerDetails, taskDuration) );
+         "\n" + tt.createTaskID(taskName, i,  developerDetails) );
          
         }
         // Display the total task duration
@@ -144,11 +145,7 @@ switch (choice) {
         
         JOptionPane.showMessageDialog(dialog, "The total task duration is: " + totalHours + " hours.");
         
-    
-    
-        
-     
-    
+ 
     break;
 
 

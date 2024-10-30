@@ -21,25 +21,7 @@ public class Task {
    
   
    
-    public String gettaskName(){
-        return taskName;
-    }
-    
-    public int gettaskNumber(){
-        return taskNumber;
-    }
-    
-    public String gettaskDescription(){
-        return taskDescription;
-    }
    
-    public String getdeveloperDetails(){
-        return developerDetails;
-    }
-    
-    public int gettaskDuration(){
-        return taskDuration;
-    }
     
     
     

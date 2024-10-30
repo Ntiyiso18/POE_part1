@@ -16,78 +16,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author RC_Student_lab
  */
 public class TaskIT {
-    
-   
 
-    /**
-     * Test of gettaskName method, of class Task.
-     */
-    @Test
-    public void testGettaskName() {
-        System.out.println("gettaskName");
-        Task instance = new Task();
-        String expResult = "";
-        String result = instance.gettaskName();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of gettaskNumber method, of class Task.
-     */
-    @Test
-    public void testGettaskNumber() {
-        System.out.println("gettaskNumber");
-        Task instance = new Task();
-        int expResult = 0;
-        int result = instance.gettaskNumber();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of gettaskDescription method, of class Task.
-     */
-    @Test
-    public void testGettaskDescription() {
-        System.out.println("gettaskDescription");
-        Task instance = new Task();
-        String expResult = "";
-        String result = instance.gettaskDescription();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getdeveloperDetails method, of class Task.
-     */
-    @Test
-    public void testGetdeveloperDetails() {
-        System.out.println("getdeveloperDetails");
-        Task instance = new Task();
-        String expResult = "";
-        String result = instance.getdeveloperDetails();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of gettaskDuration method, of class Task.
-     */
-    @Test
-    public void testGettaskDuration() {
-        System.out.println("gettaskDuration");
-        Task instance = new Task();
-        int expResult = 0;
-        int result = instance.gettaskDuration();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of checkTaskDescription method, of class Task.
@@ -117,7 +47,7 @@ public class TaskIT {
         int taskDuration = 8;
         Task instance = new Task();
         String expResult = "LO:1:SON";
-        String result = instance.createTaskID(taskName, taskNumber, taskDescription, developerDetails, taskDuration);
+        String result = instance.createTaskID(taskName, taskNumber,  developerDetails);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
       //  fail("The test case is a prototype.");
