@@ -15,8 +15,8 @@ public class Task {
    private String taskName;
    private int taskNumber;
    private String taskDescription;
-   private String developerDetails;
-   private int taskDuration;
+   String developerDetails;
+   int taskDuration;
   
    
   

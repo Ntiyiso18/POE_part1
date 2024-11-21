@@ -19,33 +19,7 @@ public class loginIT {
     
     
 
-    /**
-     * Test of getUsername method, of class login.
-     */
-    @Test
-    public void testGetUsername() {
-        System.out.println("getUsername");
-        login instance = new login();
-        String expResult = "";
-        String result = instance.getUsername();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getPassword method, of class login.
-     */
-    @Test
-    public void testGetPassword() {
-        System.out.println("getPassword");
-        login instance = new login();
-        String expResult = "";
-        String result = instance.getPassword();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
 
     /**
      * Test of checkUserName method, of class login.

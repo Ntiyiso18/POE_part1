@@ -23,14 +23,7 @@ public class login {
   private String name;
   private String lastname;
     
-    //getters and setter
-    public String getUsername(){
-        return username;
-    }
    
-    public String getPassword(){
-        return password;
-    }
     
     
     public boolean checkUserName(String username){
